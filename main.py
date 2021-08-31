@@ -74,7 +74,7 @@ training = np.array(training)
 train_X = list(training[:, 0])
 train_y = list(training[:, 1])
 
-"""
+
 # Set up the model
 model = Sequential()
 model.add(Dense(128, input_shape=(len(train_X[0]), ), activation='relu'))
@@ -85,11 +85,13 @@ model.add(Dense(len(train_y[0]), activation='softmax'))
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 history = model.fit(np.array(train_X), np.array(train_y), batch_size=5, epochs=200, verbose=1)
+accuracy = model.evaluate(X_test, y_test)
+print(accuracy)
 
 # Save the Model
 model.save('chat model.h5', history)
 
-"""
+
 
 
 
