@@ -73,5 +73,5 @@ print(ChatBox)
 
 
 
-print("Go! Bot is running")
+print("Start Chat Box")
 
